@@ -7475,17 +7475,43 @@ a.anchor-link {
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<main><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cb3007dd-3cb9-47df-ac55-8e22e4a90ec2">
+<main>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=649d132e-e82f-452f-b0c4-3b69e9b510a5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The 'Popular Baby Names' dataset was taken from the DATA.GOV website.
+Here is the link: <a href="https://catalog.data.gov/dataset/popular-baby-names">https://catalog.data.gov/dataset/popular-baby-names</a></p>
+<p>This dataset contains the names of babies born from 2011 to 2019 of various ethnicities. The data in this dataset is used for representing the popularity of a name. Each record shows the ranking of a baby name based on the number of babies who were given that name. The data in this dataset is significant in general as it can help a person pick a name for their baby that matches their ethnicity given the popularity of the name in recent years. The rank of a name is useful in knowing how popular a name has been. This dataset can even be useful to a parent who wants to pick a rare and unique name for their child. Regarding data science/data analysis, the data from this dataset can be used for determining which names are more likely to be popular in the coming years. This dataset needs to analyzed in order to answer the seven questions given below-:</p>
+<ol>
+<li>What is the highest ranked name for a female baby in the year 2016 ?</li>
+<li>What are all the names for a male baby in 2013 whose ethnicity is 'ASIAN AND PACIFIC ISLANDER' ?</li>
+<li>How many baby names existed from 2011-2013 ?</li>
+<li>Give a list of all the baby names with a count below 20 in 2019.</li>
+<li>What are the ranks and ethnicities of all the baby names found in the previous question ?</li>
+<li>Give a list of all the names for babies who are of 'HISPANIC' ethnicity as well as each name's count given the     name's ranking is 10 or below from 2012-2014.</li>
+<li>How many male 'BLACK NON HISPANIC' and 'ASIAN AND PACIFIC ISLANDER' babies were given common names i.e. names
+with a count of 50 or above in 2011 and 2019?</li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cb3007dd-3cb9-47df-ac55-8e22e4a90ec2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [152]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Import two libraries</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"Popular_Baby_Names.csv"</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"Popular_Baby_Names.csv"</span><span class="p">)</span>  <span class="c1"># Reading data from a csv file</span>
+
+<span class="c1"># Check for any null values in the data set</span>
 <span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -7497,7 +7523,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[152]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7649,10 +7675,11 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [153]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span> <span class="c1"># Check for any duplicates in the data set</span>
+<span class="n">data</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -7663,7 +7690,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[153]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>0        False
 1        False
@@ -7697,13 +7724,14 @@ Length: 57582, dtype: bool</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [154]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Import two libraries</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"Popular_Baby_Names.csv"</span><span class="p">)</span>
-<span class="n">data</span><span class="o">.</span><span class="n">dtypes</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"Popular_Baby_Names.csv"</span><span class="p">)</span>  <span class="c1"># Reading data from a csv file</span>
+<span class="n">data</span><span class="o">.</span><span class="n">dtypes</span>  <span class="c1"># Listing the data types of all the columns in the data set</span>
 </pre></div>
 </div>
 </div>
@@ -7714,7 +7742,7 @@ Length: 57582, dtype: bool</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[154]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>Year of Birth          int64
 Gender                object
@@ -7744,10 +7772,11 @@ the columns in the Data Frame</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [155]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'Year of Birth'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Sort the values in the data set by 'Year of Birth'</span>
+<span class="n">data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'Year of Birth'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7758,7 +7787,7 @@ the columns in the Data Frame</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[155]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7910,10 +7939,11 @@ the columns in the Data Frame</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [156]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Generate descriptive statistics for the data set</span>
+<span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -7924,7 +7954,7 @@ the columns in the Data Frame</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[156]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8021,13 +8051,17 @@ the columns in the Data Frame</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [157]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Question 1 </span>
+
+<span class="c1"># Locate all the rows in the data set where year of birth is 2016 and the baby's gender is female</span>
 <span class="n">female_names_2016</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Year of Birth'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2016</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Gender'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'FEMALE'</span><span class="p">)]</span>
-<span class="n">highest_ranked</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">female_names_2016</span><span class="p">[</span><span class="s1">'Count'</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
-<span class="n">female_names_2016</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">highest_ranked</span><span class="p">,</span> <span class="s2">"Child's First Name"</span><span class="p">]</span>
+<span class="n">highest_ranked</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">female_names_2016</span><span class="p">[</span><span class="s1">'Count'</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>  <span class="c1"># Index of the highest ranked female baby name</span>
+
+<span class="c1"># Fetch the female baby name with the highest rank in the year 2016</span>
+<span class="n">female_names_2016</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">highest_ranked</span><span class="p">,</span> <span class="s2">"Child's First Name"</span><span class="p">]</span>  
 </pre></div>
 </div>
 </div>
@@ -8038,7 +8072,7 @@ the columns in the Data Frame</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[157]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>'Alayna'</pre>
 </div>
@@ -8050,10 +8084,12 @@ the columns in the Data Frame</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [158]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Question 2</span>
+
+<span class="c1"># Locate the names for all those babies whose gender is male and ethnicity is 'ASIAN AND PACIFIC ISLANDER'</span>
 <span class="n">asian_male_names</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Year of Birth'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2013</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Ethnicity'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'ASIAN AND PACIFIC ISLANDER'</span><span class="p">)</span> <span class="o">&amp;</span>
                              <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">Gender</span> <span class="o">==</span> <span class="s1">'MALE'</span><span class="p">)]</span>
 </pre></div>
@@ -8066,10 +8102,11 @@ the columns in the Data Frame</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [159]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">asian_male_names</span><span class="p">[</span><span class="s2">"Child's First Name"</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Display the respective names</span>
+<span class="n">asian_male_names</span><span class="p">[</span><span class="s2">"Child's First Name"</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -8080,7 +8117,7 @@ the columns in the Data Frame</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[159]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>5931       James
 6096       Eddie
@@ -8103,12 +8140,14 @@ Name: Child's First Name, Length: 1019, dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [160]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Question 3</span>
+
+<span class="c1"># Locate all the entries in the data set where year of birth is from 2011 to 2013</span>
 <span class="n">baby_names_count</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Year of Birth'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2011</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Year of Birth'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">2013</span><span class="p">)][[</span><span class="s2">"Child's First Name"</span><span class="p">,</span><span class="s2">"Year of Birth"</span><span class="p">]]</span>
-<span class="n">baby_names_count</span>
+<span class="n">baby_names_count</span>  <span class="c1"># displaying the entries</span>
 </pre></div>
 </div>
 </div>
@@ -8119,7 +8158,7 @@ Name: Child's First Name, Length: 1019, dtype: object</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[160]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8212,10 +8251,12 @@ Name: Child's First Name, Length: 1019, dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [161]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Question 4</span>
+
+<span class="c1"># Find all the uncommon names for babies in 2019</span>
 <span class="n">uncommon_names</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Year of Birth'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2019</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Count'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">)]</span>
 </pre></div>
 </div>
@@ -8227,10 +8268,10 @@ Name: Child's First Name, Length: 1019, dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [162]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">uncommon_names</span><span class="p">[</span><span class="s2">"Child's First Name"</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">uncommon_names</span><span class="p">[</span><span class="s2">"Child's First Name"</span><span class="p">]</span>  <span class="c1"># displaying a list of all the uncommon baby names in 2019</span>
 </pre></div>
 </div>
 </div>
@@ -8241,7 +8282,7 @@ Name: Child's First Name, Length: 1019, dtype: object</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[162]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>37705     Alexis
 37706      Brian
@@ -8264,10 +8305,12 @@ Name: Child's First Name, Length: 998, dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [163]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Question 5</span>
+
+<span class="c1"># Display the rank and ethnicities of all the babies with uncommon names in 2019</span>
 <span class="n">uncommon_names</span><span class="p">[[</span><span class="s1">'Rank'</span><span class="p">,</span> <span class="s1">'Ethnicity'</span><span class="p">]]</span>
 </pre></div>
 </div>
@@ -8279,7 +8322,7 @@ Name: Child's First Name, Length: 998, dtype: object</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[163]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8372,12 +8415,14 @@ Name: Child's First Name, Length: 998, dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [164]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Question 6</span>
-<span class="n">hisp_baby_names</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Rank'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Year of Birth'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2012</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Year of Birth'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">2014</span><span class="p">)]</span>
-<span class="n">hisp_baby_names</span><span class="p">[[</span><span class="s2">"Child's First Name"</span><span class="p">,</span> <span class="s1">'Count'</span><span class="p">]]</span>
+
+<span class="c1"># Locate the Top 10 ranked names of all those babies whose ethnicity is 'HISPANIC' from 2012 to 2014</span>
+<span class="n">hisp_baby_names</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Rank'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Year of Birth'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2012</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Year of Birth'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">2014</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Ethnicity'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'HISPANIC'</span><span class="p">)]</span>
+<span class="n">hisp_baby_names</span><span class="p">[[</span><span class="s2">"Child's First Name"</span><span class="p">,</span> <span class="s1">'Count'</span><span class="p">]]</span>  <span class="c1"># displaying the Top 10 ranked baby names with their count</span>
 </pre></div>
 </div>
 </div>
@@ -8388,7 +8433,7 @@ Name: Child's First Name, Length: 998, dtype: object</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[164]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8414,29 +8459,29 @@ Name: Child's First Name, Length: 998, dtype: object</pre>
 </thead>
 <tbody>
 <tr>
-<th>3925</th>
-<td>ANGELA</td>
-<td>52</td>
+<th>4352</th>
+<td>ASHLEY</td>
+<td>159</td>
 </tr>
 <tr>
-<th>3950</th>
-<td>Alina</td>
-<td>41</td>
+<th>4369</th>
+<td>CAMILA</td>
+<td>161</td>
 </tr>
 <tr>
-<th>3963</th>
-<td>Angela</td>
-<td>77</td>
+<th>4403</th>
+<td>EMILY</td>
+<td>186</td>
 </tr>
 <tr>
-<th>3965</th>
-<td>Anna</td>
-<td>41</td>
+<th>4404</th>
+<td>EMMA</td>
+<td>125</td>
 </tr>
 <tr>
-<th>3990</th>
-<td>Chloe</td>
-<td>111</td>
+<th>4416</th>
+<td>GENESIS</td>
+<td>117</td>
 </tr>
 <tr>
 <th>...</th>
@@ -8444,33 +8489,33 @@ Name: Child's First Name, Length: 998, dtype: object</pre>
 <td>...</td>
 </tr>
 <tr>
-<th>57385</th>
-<td>Jacob</td>
-<td>256</td>
+<th>57087</th>
+<td>Jayden</td>
+<td>266</td>
 </tr>
 <tr>
-<th>57402</th>
-<td>Joseph</td>
-<td>300</td>
+<th>57134</th>
+<td>Liam</td>
+<td>312</td>
 </tr>
 <tr>
-<th>57457</th>
-<td>Michael</td>
-<td>268</td>
+<th>57160</th>
+<td>Matthew</td>
+<td>257</td>
 </tr>
 <tr>
-<th>57468</th>
-<td>Moshe</td>
-<td>267</td>
+<th>57182</th>
+<td>Noah</td>
+<td>282</td>
 </tr>
 <tr>
-<th>57517</th>
-<td>Samuel</td>
-<td>206</td>
+<th>57209</th>
+<td>Sebastian</td>
+<td>241</td>
 </tr>
 </tbody>
 </table>
-<p>1448 rows × 2 columns</p>
+<p>337 rows × 2 columns</p>
 </div>
 </div>
 </div>
@@ -8481,12 +8526,16 @@ Name: Child's First Name, Length: 998, dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [165]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Question 7</span>
+
+<span class="c1"># Find all the common names of all male 'BLACK NON HISPANIC' and 'ASIAN AND PACIFIC ISLANDER' babies in 2011</span>
 <span class="n">common_names_2011</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">Gender</span> <span class="o">==</span> <span class="s1">'MALE'</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">Count</span> <span class="o">&gt;=</span> <span class="mi">50</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">((</span><span class="n">data</span><span class="p">[</span><span class="s1">'Ethnicity'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'BLACK NON HISPANIC'</span><span class="p">)</span> <span class="o">|</span>   
                              <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Ethnicity'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'ASIAN AND PACIFIC ISLANDER'</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Year of Birth'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2011</span><span class="p">)]</span>
+
+<span class="c1"># Display the common names in 2011</span>
 <span class="n">common_names_2011</span>
 </pre></div>
 </div>
@@ -8498,7 +8547,7 @@ Name: Child's First Name, Length: 998, dtype: object</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[165]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8639,11 +8688,14 @@ Name: Child's First Name, Length: 998, dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [166]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">common_names_2019</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">Gender</span> <span class="o">==</span> <span class="s1">'MALE'</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">Count</span> <span class="o">&gt;=</span> <span class="mi">50</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">((</span><span class="n">data</span><span class="p">[</span><span class="s1">'Ethnicity'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'BLACK NON HISPANIC'</span><span class="p">)</span> <span class="o">|</span>   
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Find all the common names of all male 'BLACK NON HISPANIC' and 'ASIAN AND PACIFIC ISLANDER' babies in 2019</span>
+<span class="n">common_names_2019</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">Gender</span> <span class="o">==</span> <span class="s1">'MALE'</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">Count</span> <span class="o">&gt;=</span> <span class="mi">50</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">((</span><span class="n">data</span><span class="p">[</span><span class="s1">'Ethnicity'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'BLACK NON HISPANIC'</span><span class="p">)</span> <span class="o">|</span>   
                              <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Ethnicity'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'ASIAN AND PACIFIC ISLANDER'</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Year of Birth'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2019</span><span class="p">)]</span>
+
+<span class="c1"># Display the common names in 2019</span>
 <span class="n">common_names_2019</span>
 </pre></div>
 </div>
@@ -8655,7 +8707,7 @@ Name: Child's First Name, Length: 998, dtype: object</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[166]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -9056,10 +9108,11 @@ Name: Child's First Name, Length: 998, dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [167]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">common_names_2019</span><span class="o">.</span><span class="n">shape</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Display the dimensions of the table shown above in the form of a tuple</span>
+<span class="n">common_names_2019</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
@@ -9070,7 +9123,7 @@ Name: Child's First Name, Length: 998, dtype: object</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[167]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>(40, 6)</pre>
 </div>
